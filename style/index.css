@@ -20,7 +20,18 @@ font-size: 100%;
 font: inherit;  
 vertical-align: baseline;  
 }
-/*border code for visualization*/
+/*General Styling*/
 *{
-    border:2px solid gray;
+    border:4px solid gray;
+    max-width: 100%;
+}
+/*Header Styling*/
+nav.heading{
+    display: flex;
+    flex-direction: row;
+}
+/*Opening Styling*/
+
+section.openingImage{
+    background-image:url("images/bwbubbles.jpg")
 }
