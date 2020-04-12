@@ -1,3 +1,6 @@
+/*Font Styles*/
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 /* Add CSS styling here */
 /*reset code*/
 html, body, div, span, applet, object, iframe,  
@@ -20,9 +23,6 @@ font-size: 100%;
 font: inherit;  
 vertical-align: baseline;  
 }
-/*Font Styles*/
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Lato&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 /*Color Scheme I like*/
 :root{
    --first-color: #327EB8;
@@ -30,9 +30,11 @@ vertical-align: baseline;
    --third-color:#a32c64;
    --fourth-color:#fdc800; 
 }
+/*General Styling for Desktop Size*/
+html{
+    font-size: 62.5%;
+}
 
-
-/*General Styling*/
 *{  max-width: 100%;
     box-sizing: border-box;
 }
@@ -42,34 +44,42 @@ body{
 }
 
 /*Header Styling*/
-header nav h1{
-    height:10vh;
-    width:50vh;
-    text-align: center;
-    font-size: 24px;
-    font-family: "Indie Flower", cursive;
-    color:var(--second-color)
+header{
+    height: 20vh;
+    background-color: var(--first-color);
 }
 nav.heading{
-    background-color: var(--first-color);
     display:flex;
     flex-direction: row;
     justify-content: space-between;
-}
-nav.heading div{
-    width:50%;
-    display:flex;
-    flex-direction: row;
-    justify-content: space-around;
     align-items: center;
 }
+
+div.links{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+nav.heading h1{
+    float: left;
+    width:40%;
+    margin-left: 3%;
+    text-align: left;
+    font-size: 3.6rem;
+    font-family: "Indie Flower", cursive;
+    color:var(--second-color)
+}
+
 div.links a{
+    margin: 0 5% 0 5%;
     text-decoration: none;
+    font-size: 2rem;
     background-color: var(--third-color);
     color:var(--second-color);
     font-family: "Indie Flower", cursive;
     height:8vh;
-    width:20vh;
+    width:12vw;
     text-align: center;
     border-radius: 5px;
 }
@@ -77,12 +87,14 @@ div.links a:hover{
     background-color: var(--fourth-color);
     color: var(--first-color)
 }
+
+
 /*Opening Styling*/
 
 section.openingImage{
-    height:60vh;
+    height:80vh;
     width: 100vw;
-    background-image:url("images/colorful.jpg");
+    background-image:url("../images/colorfulresized.jpg");
     background-repeat: none;
     background-size: cover;
     background-position: center;
@@ -97,18 +109,20 @@ section.openingImage div{
     justify-content: center;
 }
 section.openingImage div h1{
-    font-size: 40px;
+    margin-top:30vh;
+    font-size: 6rem;
     font-family: "Indie Flower", cursive;
     color: var(--third-color);
     font-weight: bold;
 }
 section.openingImage div a{
     text-decoration: none;
+    font-size: 2.5rem;
     background-color: var(--fourth-color);
     color:var(--first-color);
     font-family: "Indie Flower", cursive;
     height:8vh;
-    width:20vh;
+    width:12vw;
     text-align: center;
     border-radius: 5px;
 }
@@ -116,7 +130,7 @@ section.openingImage div a:hover{
     background-color: var(--third-color);
     color: var(--second-color);
     }
-    /*Below is the gallery*/
+    /*Below is the gallery////////////////////*/
 section.container{
     display:flex;
     justify-content: center;
@@ -128,41 +142,86 @@ nav.gallery{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
-    align-content: space-around;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 div.images{
     text-align: center;
-    height: 50vh;
-    width: 25vw;
+    height: 25%;
+    width: 30%;
 }
 div.images p{
-    justify-self: center;
-    align-self:flex-end;
+    font-size: 1.6rem;
 }
 div.images img{
-    margin-top: 10%;
+    margin-top: 15%;
     object-fit: cover;
     width:75%;
     height:60%
 }
-/*Styling for Footer*/
+/*Styling for Footer/////////////////////////*/
 footer{
     height: 20vh;
-    width: 100vw;
     background-color: var(--second-color);
 }
 div.footer{
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 div.footer a{
+    margin:5%;
     border-radius: 5px;
     background-color: var(--first-color);
+    font-size: 1.6rem;
     color: black;
     text-align: center;
     text-decoration: none;
     height:8vh;
-    width:20vh;
+    width:15vw;
+}
+/*//////Below is Styling for Tablets///////*/
+@media only screen and (max-width:800px){
+    header{
+        height:10vh;
+    }
+    nav.heading h1{
+        font-size:2rem;
+    }
+    div.links a{
+        font-size:1.6rem;
+    }
+    section.openingImage div a{
+        font-size: 1.6rem;
+        height:10vh;
+        width:18vw;
+    }
+    div.images{
+        width: 50%;
+        height: 30%;
+    }
+}
+/*/////Below is Styling for Mobile////////////*/
+@media only screen and (max-width:500px){
+    header{
+        height:20vh;
+    }
+    nav.heading{
+        flex-direction: column;
+        justify-content: center;
+    }
+    nav.heading h1{
+        text-align: center;
+    }
+    div.links a{
+        width:20vw;
+    }
+    section.openingImage div a{
+        font-size: 2rem;
+        width:25vw;
+    }
+    div.footer a{
+        width:25vw;
+    }
 }
